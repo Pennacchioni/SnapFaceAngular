@@ -1,0 +1,21 @@
+<div [ngClass]="{ snapped : faceSnap.statut === true }" class="face-snap-card">
+    <h1>{{ faceSnap.title | uppercase }}</h1>   
+
+    <a routerLink="/facesnap">BACK</a>
+
+    <p>{{ faceSnap.description | lowercase }}</p>
+
+    <p *ngIf="faceSnap.location === 'Nice' "> Photo prise à {{faceSnap.location}} </p>
+
+    <p> {{faceSnap.createdDate | date :'EEEE dd MMMM YYYY à HH:mm' | titlecase }}</p>
+
+    <img [src]='faceSnap.urlimg' [alt]="faceSnap.title" />
+
+    <button (click)="OnClickSnaps()" class="mt-5"> {{ snapsTxt | titlecase }} </button>
+    <span [ngStyle]="{color : 'rgb(0,0,'+ faceSnap.snaps +')' }">{{faceSnap.snaps | number: '1.0-2'}}</span>
+    <p [ngStyle]="{color : 'rgb(0,0,'+ faceSnap.snaps +')' }">{{faceSnap.snaps | percent: '1.1-1'}}</p>
+    <p [ngStyle]="{color : 'rgb(0,0,'+ faceSnap.snaps +')' }">{{faceSnap.snaps | currency : 'EUR' : 'code'}}</p>     
+   
+     <p> le satut du like {{ faceSnap.statut}} </p>
+
+</div>
