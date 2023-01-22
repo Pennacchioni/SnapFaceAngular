@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(){
-    this.titelHeader = "snap face";
+    this.titelHeader = "snap faces";
   }
 
 }
